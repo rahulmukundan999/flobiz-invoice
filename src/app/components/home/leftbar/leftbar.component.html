@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="heading">
+        Your business details
+    </div>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="col image-main" *ngIf="!data.logo">
+                <div class="image">
+                    <img src="../../../../assets/svg/image.svg">
+                </div>
+                <div class="upload-text" (click)="file.click()">
+                    Upload photo
+                </div>
+            </div>
+
+            <input type='file' (change)="readURL($event);" #file [hidden]="true" />
+
+            <div class="col image-main" *ngIf="data.logo" >
+                <img [src]="data.logo" height="100" width="100">
+            </div>
+        </div>
+
+        <div class="row content">
+            <div class="col">
+                <label for="businessName" class="form-label">Business Name</label>
+                <input type="text" class="form-control" id="businessName" [(ngModel)]="data.party.partyName">
+            </div>
+        </div>
+
+        <div class="row content">
+            <label for="address" class="form-label">Business address</label>
+            <div class="input-group">
+                <textarea class="form-control" id="address" [(ngModel)]="data.party.address"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

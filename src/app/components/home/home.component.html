@@ -1,0 +1,23 @@
+<div class="content">
+    <div class="row">
+        <div class="col heading">
+            Create Invoice
+        </div>
+
+        <div class="col btn-div">
+            <button type="button" class="btn btn-primary btn-save" [disabled]="checkValid()" (click)="saveInvoice()">Save Invoice</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 padding-0">
+            <app-leftbar [data]="data"></app-leftbar>
+        </div>
+        <div class="col-sm-8 padding-0">
+            <app-rightbar [data]="data"></app-rightbar>
+        </div>
+    </div>
+</div>
+
+
+<app-modal *ngIf="sharedData.showModal" (valueChange)='closed($event)' [type]="'success'" [title]="'Success'">
+</app-modal>

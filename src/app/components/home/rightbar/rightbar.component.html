@@ -1,0 +1,146 @@
+<div class="main">
+    <div class="heading">
+        Invoice Preview
+    </div>
+
+
+    <div class="container-main">
+        <div class="right-main">
+            <div class="row content">
+                <div class="col-5 col-main right-border">
+                    <div class="row">
+                        <div class="col" class="image" (click)="file.click()" *ngIf="!data.logo">
+                            <div class="logo">Logo</div>
+                        </div>
+                        <input type='file' (change)="readURL($event);" #file [hidden]="true" />
+
+                        <div class="col" *ngIf="data.logo" class="image-select">
+                            <img [src]="data.logo" height="100" width="100">
+                        </div>
+                        <div class="col business">
+                            <div>
+                                {{data.party.partyName ?data.party.partyName  : 'Business Name'}}
+                            </div>
+                            <div class="address-text">
+                                {{data.party.address}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 col-main">
+                    <div class="row invoice-no">
+                        <div class="col">
+                            <label for="invoiceNo" class="form-label">Sales Invoice No</label>
+                            <input type="text" class="form-control" id="invoiceNo"
+                                [(ngModel)]="data.invoiceNo" name="invoiceNo">
+                        </div>
+
+                        <div class="col">
+                            <div class="invoice-date-text">Invoice Date</div>
+                            <div class="input-group flex-nowrap">
+                                <input type="text" class="form-control" [(ngModel)]="data.invoiceDate" (click)="d.toggle()"
+                                    #d="ngbDatepicker" ngbDatepicker name="invoiceDate">
+                                <span class="input-group-text" id="basic-addon2" (click)="d.toggle()">
+                                    <img src="../../../../assets/svg/calendar.svg">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row content">
+                <div class="add-party">
+                    BILL TO
+                    <p class="dashed-biller" (click)="openModal('name')" *ngIf="!data.party.address">
+                        <img src="../../../../assets/svg/add.svg">
+                        Add party to your invoice
+                    </p>
+
+                    <div *ngIf="data.party.address">
+                        <div>
+                            <b>{{data.party.partyName}}</b>
+                        </div>
+                        <div class="bill-data">
+                            {{data.party.address}}
+                        </div>
+
+                        <div class="bill-data">
+                            {{data.party.number}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row content">
+                <div class="col-11 table-width padding-0">
+                    <div class="table-content">
+                        <table class="table table-bordered">
+                            <thead class="table-head">
+                                <tr>
+                                    <th scope="col">ITEMS</th>
+                                    <th scope="col">QUANTITY</th>
+                                    <th scope="col">RATE/ITEM (
+                                        <Img src="../../../../assets/image/rupee-indian.png" height="13" width="13">
+                                        )</th>
+                                    <th scope="col">AMOUNT (
+                                        <Img src="../../../../assets/image/rupee-indian.png" height="13" width="13">
+                                        )</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data.items">
+                                    <td>{{item.itemName}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.ratePerItem}}</td>
+                                    <td>{{item.quantity * item.ratePerItem}}</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-1 delete-main padding-0">
+                    <div *ngFor="let item of data.items;let i = index" style="padding-bottom: 21px;">
+                        <img src="../../../../assets/svg/trash.svg" (click)="removeItem(i)">
+                    </div>
+                </div>
+
+                <div>
+                    <p class="dashed-item" (click)="openModal('item')">
+                        <img src="../../../../assets/svg/add.svg">
+                        Add items to your invoice
+                    </p>
+                </div>
+            </div>
+
+            <div class="row content">
+                <div class="col-sm border-right">
+
+                </div>
+                <div class="col-sm">
+                    <div class="total">
+                        <div class="flex-container total-amount">
+                            <div>
+                                Total Amount
+                            </div>
+                            <div>
+                                <b>
+                                    <Img src="../../../../assets/image/rupee-indian.png" height="20" width="20">
+                                    {{data.total}}</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<app-modal *ngIf="sharedData.showModal" [type]="'form'" (valueChange)='closed($event)' [formData]="formData"
+    [title]="sharedData.title">
+</app-modal>

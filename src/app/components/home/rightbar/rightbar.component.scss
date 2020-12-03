@@ -1,0 +1,165 @@
+.heading {
+  border: 1px solid lightgrey;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.container-main {
+  padding: 5px;
+  background-color: #f1f1f1;
+  height: 90vh;
+}
+
+.right-main {
+  margin: 5px;
+  border: 1px solid lightgrey;
+}
+.content {
+  background-color: white;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.right-border {
+  border-right: 1px solid lightgrey;
+}
+
+.image {
+  background-color: #a7a0a0;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 32px;
+}
+
+.image-select {
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  display: flex;
+
+//   margin-left: -1px;
+}
+
+.business {
+  margin-top: 18px;
+  font-weight: 500;
+}
+
+.party {
+  background-color: white;
+  // padd
+}
+
+.invoice-no {
+  margin-top: 10px;
+}
+
+.invoice-date-text {
+  margin-bottom: 5px;
+}
+
+p.dashed-biller {
+  border-style: dashed;
+  border-color: #6acaf3;
+  border-radius: 1px;
+  text-align: center;
+  height: 80px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6acaf3;
+  background-color: #86b8e229;
+  font-weight: 600;
+}
+
+p.dashed-item {
+  border-style: dashed;
+  border-color: #6acaf3;
+  border-radius: 1px;
+  text-align: center;
+  height: 50px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6acaf3;
+  background-color: #86b8e229;
+  font-weight: 600;
+}
+
+.add-party {
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.table-content {
+  padding: 15px;
+}
+
+table {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+table td {
+    font-size: 14px;
+}
+
+.table-head {
+  background-color: #dcdada;
+  font-weight: 500;
+  color: #565454;
+}
+
+.total {
+  padding: 50px;
+  //   border-bottom: 1px solid lightgrey;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-amount {
+  font-size: 20px;
+}
+
+.table-width {
+  width: 98%;
+}
+
+.delete-main {
+  padding-top: 60px;
+  width: 2%;
+  padding-right: 5px;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  .delete-main {
+    padding-top: 88px;
+    width: 2%;
+    padding-right: 5px;
+  }
+}
+
+.address-text {
+  font-weight: 400;
+  color: #656161;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+
+.bill-data {
+    padding-bottom: 5px;
+}

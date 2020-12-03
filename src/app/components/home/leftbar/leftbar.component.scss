@@ -1,0 +1,34 @@
+.heading {
+  border: 1px solid lightgrey;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.main-content {
+  margin: 15px;
+}
+
+.image-main {
+  margin: 20px;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  height: 100px;
+  width: 100px;
+}
+
+.upload-text {
+  font-size: 14px;
+  color: #2088bb;
+  padding-left: 4px;
+  cursor: pointer;
+}
+
+.content {
+  margin: 10px;
+}

@@ -1,0 +1,30 @@
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{title}}</h5>
+                <img src="../../../assets/svg/close.svg" data-dismiss="modal" (click)="onClose()">
+            </div>
+            <div class="modal-body">
+                <div *ngIf="type =='form'">
+                    <app-form [formData]="formData" (submit)="submitData($event)"></app-form>
+                </div>
+
+                <div *ngIf="type == 'success'">
+                    <div class="center">
+                        <div class="image-center">
+                            <img src="../../../assets/image/success.png" height="100" width="100">
+                            <div class="invoice-text">
+                                Invoice saved successfully
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#myModal" #openButton>Open
+                    Modal</button>
+                <button data-dismiss="modal" aria-hidden="true" [hidden]="true" #closeButton>Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

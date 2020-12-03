@@ -1,0 +1,32 @@
+form button {
+  margin-top: 10px;
+  //   width: 100%;
+  width: 110px;
+}
+
+form .error {
+  font-style: italic;
+  color: red;
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+form .form-group.row {
+  flex-direction: row;
+}
+
+button {
+  width: 100px;
+}
+
+.btn-save {
+  background-color: #7952b3;
+}
+
+.cancel-btn {
+  border: 1px solid lightgrey;
+}
